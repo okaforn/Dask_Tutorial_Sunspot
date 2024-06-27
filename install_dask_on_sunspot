@@ -1,0 +1,12 @@
+source $IDPROOT/etc/profile.d/conda.sh
+conda activate
+
+export HTTP_PROXY=http://proxy.alcf.anl.gov:3128
+export HTTPS_PROXY=http://proxy.alcf.anl.gov:3128
+export http_proxy=http://proxy.alcf.anl.gov:3128
+export https_proxy=http://proxy.alcf.anl.gov:3128
+git config --global http.proxy http://proxy.alcf.anl.gov:3128
+
+conda create -n dask
+conda activate dask
+conda install dask ipykernel  -c conda-forge
